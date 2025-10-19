@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les Échos de Kerkennah — Carte interactive</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <!-- Leaflet Routing Machine CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Les Échos de Kerkennah</h1>
+    <p>Cartographie interactive — Circuit touristique (3 jours)</p>
+  </header>
+
+  <main>
+    <aside id="controls">
+      <div class="panel">
+        <h2>Itinéraire</h2>
+        <label>Point de départ
+          <input id="start" list="pois-list" placeholder="Choisir ou taper...">
+        </label>
+        <label>Point d'arrivée
+          <input id="end" list="pois-list" placeholder="Choisir ou taper...">
+        </label>
+        <datalist id="pois-list"></datalist>
+
+        <label>Mode de transport</label>
+        <div class="modes">
+          <button class="mode active" data-mode="car">🚗 Voiture / Bus</button>
+          <button class="mode" data-mode="bike">🚴‍♀️ Vélo</button>
+          <button class="mode" data-mode="foot">🚶‍♂️ À pied</button>
+        </div>
+
+        <div class="actions">
+          <button id="routeBtn">Afficher l'itinéraire</button>
+          <button id="clearRoute">Effacer itinéraire</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Filtrer & Couches</h2>
+        <label><input type="checkbox" id="photosLayer" checked> Carte photos</label>
+        <label><input type="checkbox" id="poiLayer" checked> Points d'intérêt</label>
+        <label><input type="checkbox" id="extrasLayer" checked>  Hôtels</label>
+        <label><input type="checkbox" id="busStopsLayer" checked> arrêts de bus de bus</label>
+
+
+        <h3>Jour</h3>
+        <select id="dayFilter">
+          <option value="all">Tous</option>
+          <option value="1">Jour 1</option>
+          <option value="2">Jour 2</option>
+          <option value="3">Jour 3</option>
+        </select>
+      </div>
+
+      <div class="panel small">
+        <h2>Infos</h2>
+        <p id="info">Cliquez sur une icône pour voir la fiche descriptive.</p>
+      </div>
+    </aside>
+
+    <section id="map-container">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Projet de fin d'études — Cartographie paysagère — Les Échos de Kerkennah</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+  <script src="script.js"></script>
+</body>
+<button id="menu-toggle">☰ Menu</button>
+<label>
+  <input type="checkbox" id="fullCircuitLayer"> Circuit touristique complet
+</label>
+
+</html>

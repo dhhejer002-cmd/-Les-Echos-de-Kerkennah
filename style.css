@@ -1,0 +1,128 @@
+/* ==========================
+   style.css
+   ========================== */
+
+*{
+  box-sizing:border-box;
+  font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial
+}
+body{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  height:100vh
+}
+header{
+  padding:12px 18px;
+  background:#0b4f6c;
+  color:#fff
+}
+header h1{
+  margin:0;
+  font-size:18px
+}
+main{
+  flex:1;
+  display:flex;
+  gap:12px
+}
+#controls{
+  width:320px;
+  padding:12px;
+  background:#f7f7f7;
+  overflow:auto
+}
+#map-container{
+  flex:1
+}
+#map{
+  width:100%;
+  height:100%
+}
+.panel{
+  background:#fff;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.08)
+}
+.panel.small{
+  font-size:14px
+}
+.mode{
+  padding:8px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  margin-right:6px
+}
+.mode.active{
+  background:#0b4f6c;
+  color:#fff;
+  border-color:#0b4f6c
+}
+.actions{
+  margin-top:8px
+}
+.actions button{
+  margin-right:6px;
+  padding:8px 10px;
+  border-radius:6px;
+  border:none;
+  background:#0b4f6c;
+  color:#fff;
+  cursor:pointer
+}
+.popup-media{
+  width:120px;
+  height:auto;
+  margin-right:6px;
+  margin-top:6px;
+  border-radius:4px
+}
+.popup-card h3{
+  margin:0 0 6px
+}
+footer{
+  padding:8px 12px;
+  background:#eee;
+  text-align:center
+}
+
+/* Responsive */
+@media (max-width:900px){
+  #controls{display:none}
+}
+/* Version mobile */
+@media (max-width: 768px) {
+  #controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.95);
+    width: 80%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 10px;
+    display: none; /* Masqué par défaut sur mobile */
+  }
+
+  #menu-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  #controls.show {
+    display: block; /* S’affiche quand activé */
+  }
+}
